@@ -67,11 +67,11 @@ function WeatherApp() {
         if (weather.data.weather) {
             const condition = weather.data.weather[0].main.toLowerCase();
             if (condition.includes('cloud')) return Cloudy;
-            if (condition.includes('clear')) return Sunny;
+            if (condition.includes('clear')) return Clear;
             if (condition.includes('rain')) return Rainy;
             if (condition.includes('storm')) return Stormy;
             if (condition.includes('sun')) return Sunny;
-            if (condition.includes('fog')) return Foggy;
+            if (condition.includes('fog') || condition.includes('mist') || condition.includes('haze')) return Foggy; 
             if (condition.includes('snow')) return snow; 
         }
         return Clear; 
@@ -85,7 +85,7 @@ function WeatherApp() {
             if (condition.includes('rain')) return RainyIcon;
             if (condition.includes('storm')) return StormyIcon;
             if (condition.includes('sun')) return SunnyIcon;
-            if (condition.includes('fog')) return FoggyIcon;
+            if (condition.includes('fog') || condition.includes('mist') || condition.includes('haze')) return FoggyIcon; 
             if (condition.includes('snow')) return SnowIcon; 
         }
         return ClearIcon; 
